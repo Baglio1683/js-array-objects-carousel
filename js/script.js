@@ -25,6 +25,12 @@ const images = [
 
 const containerOne = document.getElementById("cont-1"); 
 const containerTwo = document.getElementById("cont-2"); 
+let posImage = 0 ;
+
+
+
+
+
 
 // CICLE FOR START THE IMAGES 
 for(let i = 0 ; i < images.length ; i++){
@@ -67,25 +73,63 @@ for(let i = 0 ; i < images.length ; i++){
         card_2.classList.add("d-rel"); 
        let btn = document.createElement('i');
        btn.classList.add("fa-solid"); 
-       btn.classList.add("btn"); 
+       btn.classList.add("btn");
+        
        
        if(i===0){
         btn.classList.add("fa-angle-left");
         btn.classList.add("btn-left"); 
+        btn.addEventListener('click' , ChangeImagesLeft);
        }
        else{
         btn.classList.add("fa-angle-right");
         btn.classList.add("btn-right"); 
+        btn.addEventListener('click' , ChangeImagesRight);  
        }
 
       card_2.appendChild(btn); 
      }
 
+     containerTwo.append(card_2)
+
 }
 
 
+let ArrayImages = document.getElementsByClassName("main_card"); 
+
+function ChangeImagesRight(){
+
+if(posImage >=0 && posImage < ArrayImages.length-1) {
+
+        ArrayImages[posImage].classList.add("d-none")
+        posImage++
+        ArrayImages[posImage].classList.remove("d-none")
+
+     }
+    else if(posImage === ArrayImages.length-1){
+    ArrayImages[posImage].classList.add("d-none"); 
+    posImage = 0; 
+    ArrayImages[posImage].classList.remove("d-none"); 
+ }
+
+}
 
 
+function ChangeImagesLeft(){
 
+    if(posImage > 0 && posImage <= ArrayImages.length-1) {
+
+        ArrayImages[posImage].classList.add("d-none")
+        posImage--
+        ArrayImages[posImage].classList.remove("d-none")
+
+     }
+    else if(posImage === 0){
+    ArrayImages[posImage].classList.add("d-none"); 
+    posImage = ArrayImages.length-1; 
+    ArrayImages[posImage].classList.remove("d-none"); 
+ }
+
+}
 
 

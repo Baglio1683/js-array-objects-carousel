@@ -75,6 +75,11 @@ img{
     display: none;
 }
 
+.d-block{
+    display: block;
+}
+
+
 .btn:hover{
     background-color: rgb(153, 150, 150);
 }
