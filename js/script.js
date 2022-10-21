@@ -22,3 +22,70 @@ const images = [
     }
 ];
 
+
+const containerOne = document.getElementById("cont-1"); 
+const containerTwo = document.getElementById("cont-2"); 
+
+// CICLE FOR START THE IMAGES 
+for(let i = 0 ; i < images.length ; i++){
+
+    let card = document.createElement('div'); 
+    let img = document.createElement('img');
+    let img_2 = document.createElement('img');
+    let title = document.createElement('h2'); 
+    let text = document.createElement('p');
+    let card_2 = document.createElement('div');  
+    
+    card.classList.add("main_card");
+    card.classList.add("d-rel");
+    title.classList.add("d-abs");
+    title.classList.add("title");
+    text.classList.add("d-abs"); 
+    text.classList.add("subtitle"); 
+    if(i>0){
+        card.classList.add("d-none")
+    }
+
+    img.src = images[i].image; 
+    img_2.src = images[i].image; 
+    title.innerHTML = images[i].title; 
+    text.innerText = images[i].text; 
+
+   
+    card.appendChild(img)
+    card.appendChild(title)
+    card.appendChild(text)
+    containerOne.append(card)
+
+//    Container Two 
+     
+     card_2.classList.add("card"); 
+     card_2.appendChild(img_2);
+    
+     if(i===0 || i === images.length-1){
+
+        card_2.classList.add("d-rel"); 
+       let btn = document.createElement('i');
+       btn.classList.add("fa-solid"); 
+       btn.classList.add("btn"); 
+       
+       if(i===0){
+        btn.classList.add("fa-angle-left");
+        btn.classList.add("btn-left"); 
+       }
+       else{
+        btn.classList.add("fa-angle-right");
+        btn.classList.add("btn-right"); 
+       }
+
+      card_2.appendChild(btn); 
+     }
+
+}
+
+
+
+
+
+
+

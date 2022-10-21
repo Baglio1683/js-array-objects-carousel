@@ -2,9 +2,24 @@
 .cont_1{ 
     height: 70vh;
     width: 100%;
-    object-fit: cover;
-    background-color: lightpink;
+}
+
+.main_card{
     display: flex;
+    object-fit: cover;
+    width: 100%;
+    max-height: 70vh;
+    color: white;
+}
+
+.title{
+    right: 10px;
+    top: 10px
+}
+
+.subtitle{
+    right: 10px;
+    top: 50px
 }
 
 .cont_2{
@@ -50,6 +65,14 @@ img{
 
 .d-rel{
     position: relative;
+}
+
+.d-abs{
+    position: absolute;
+}
+
+.d-none{
+    display: none;
 }
 
 .btn:hover{
