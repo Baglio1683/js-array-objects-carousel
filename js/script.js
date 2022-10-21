@@ -22,7 +22,3 @@ const images = [
     }
 ];
 
-
-console.log(images); 
-
-alert("Start")
