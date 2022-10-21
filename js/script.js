@@ -67,6 +67,10 @@ for(let i = 0 ; i < images.length ; i++){
      
      card_2.classList.add("card"); 
      card_2.appendChild(img_2);
+
+     if(i>0){
+        card_2.classList.add("opacity-1")
+     }
     
      if(i===0 || i === images.length-1){
 
@@ -95,21 +99,27 @@ for(let i = 0 ; i < images.length ; i++){
 }
 
 
-let ArrayImages = document.getElementsByClassName("main_card"); 
+const ArrayImages = document.getElementsByClassName("main_card"); 
+const ArrayLittleDownImages = document.getElementsByClassName("card")
 
 function ChangeImagesRight(){
 
 if(posImage >=0 && posImage < ArrayImages.length-1) {
 
         ArrayImages[posImage].classList.add("d-none")
+        ArrayLittleDownImages[posImage].classList.add("opacity-1")
         posImage++
         ArrayImages[posImage].classList.remove("d-none")
+        ArrayLittleDownImages[posImage].classList.remove("opacity-1")
 
      }
     else if(posImage === ArrayImages.length-1){
+
     ArrayImages[posImage].classList.add("d-none"); 
+    ArrayLittleDownImages[posImage].classList.add("opacity-1")
     posImage = 0; 
-    ArrayImages[posImage].classList.remove("d-none"); 
+    ArrayImages[posImage].classList.remove("d-none");
+    ArrayLittleDownImages[posImage].classList.remove("opacity-1")
  }
 
 }
@@ -120,14 +130,18 @@ function ChangeImagesLeft(){
     if(posImage > 0 && posImage <= ArrayImages.length-1) {
 
         ArrayImages[posImage].classList.add("d-none")
+        ArrayLittleDownImages[posImage].classList.add("opacity-1")
         posImage--
         ArrayImages[posImage].classList.remove("d-none")
+        ArrayLittleDownImages[posImage].classList.remove("opacity-1")
 
      }
     else if(posImage === 0){
     ArrayImages[posImage].classList.add("d-none"); 
+    ArrayLittleDownImages[posImage].classList.add("opacity-1")
     posImage = ArrayImages.length-1; 
-    ArrayImages[posImage].classList.remove("d-none"); 
+    ArrayImages[posImage].classList.remove("d-none");
+    ArrayLittleDownImages[posImage].classList.remove("opacity-1") 
  }
 
 }

@@ -84,6 +84,8 @@ img{
     background-color: rgb(153, 150, 150);
 }
 
-
+.opacity-1{
+    filter: opacity(0.5);
+}
 
 
